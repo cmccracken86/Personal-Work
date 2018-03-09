@@ -1,0 +1,145 @@
+import java.util.Scanner;
+
+public class Main {
+
+	static Scanner reader = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		boolean test = true;
+		
+		while(test) {
+			
+			System.out.println("\n\nVolume and Area Calculator\n");
+			System.out.println("1: Square\n2: Triangle\n3: Circle");
+			System.out.println("4: Cube\n5: Pyramid\n6: Sphere");
+			System.out.println("7: Exit");
+			System.out.print("\nPlease Enter a Selection: ");
+			int choice = reader.nextInt();
+			
+			switch(choice) {
+				case 1:
+					calcSquare();
+					break;
+				case 2:
+					calcTriangle();
+					break;
+				case 3:
+					calcCircle();
+					break;
+				case 4:
+					calcCube();
+					break;
+				case 5:
+					calcPyramid();
+					break;
+				case 6:
+					calcSphere();
+					break;
+				case 7:
+					test = false;
+					break;
+			}
+		}
+		System.out.println("\nThank you for using the Area Calculator");
+		reader.close();
+}
+	public static void calcSquare() {
+		
+		System.out.print("\nTo Calculate the Area of a Square\n\nEnter Height: ");
+		double ht = reader.nextDouble();
+		System.out.println();
+		System.out.print("Enter Width: ");
+		double wt = reader.nextDouble();
+		System.out.println();
+		System.out.printf("The Area is %.2f", ht * wt);
+		System.out.println("\n\nPress Any Key to Continue");
+		try {
+			System.in.read();
+		}
+		catch(Exception e) {	
+		}
+		}
+	public static void calcTriangle() {
+		
+		System.out.print("\nTo Calculate the Area of a Triangle\n\nEnter First Side: ");
+		double fs = reader.nextDouble();
+		System.out.println();
+		System.out.print("Enter Second Side: ");
+		double ss = reader.nextDouble();
+		System.out.println();
+
+		double temp = (fs * fs) + (ss * ss);
+		double ts = Math.sqrt(temp);
+		double area = (fs + ss + ts) / 2;
+		
+		System.out.printf("The Area is %.2f", area);
+		System.out.println("\n\nPress Any Key to Continue");
+		try {
+			System.in.read();
+		}
+		catch(Exception e) {	
+		}
+	}
+	public static void calcCircle() {
+		System.out.print("To Calculate the Area of a Circle\n\nEnter the Radius: ");
+		System.out.println();
+		double rad = reader.nextDouble();
+		double pi = 3.14;
+		System.out.printf("The Area is %.2f", (pi *(rad * rad)));
+		System.out.println("\n\nPress Any Key to Continue");
+		try {
+			System.in.read();
+		}
+		catch(Exception e) {	
+		}
+	}
+	public static void calcCube() {
+		System.out.print("To Calculate the Area of a Cube");
+		System.out.print("\nEnter Length: ");
+		System.out.println();
+		double len = reader.nextDouble();
+		System.out.print("\nEnter Width: ");
+		System.out.println();
+		double wi = reader.nextDouble();
+		System.out.print("\nEnter Height: ");
+		System.out.println();
+		double ht = reader.nextDouble();
+		System.out.printf("\nThe Volume is %.2f", (len * wi * ht));
+		System.out.println("\n\nPress Any Key to Continue");
+		try {
+			System.in.read();
+		}
+		catch(Exception e) {	
+		}
+	}
+	public static void calcPyramid() {
+		System.out.print("To Calculate the Volume of a Pyramid");
+		System.out.print("\nEnter first side of the base: ");
+		double s1 = reader.nextDouble();
+		System.out.print("\nEnter second side of the base: ");
+		double s2 = reader.nextDouble();
+		System.out.print("\nEnter height of pyramid: ");
+		double h = reader.nextDouble();
+		double answer = (s1 * s2 * h) / 3;
+		System.out.printf("\nThe Volume is %.2f", answer);
+		System.out.println("\n\nPress Any Key to Continue");
+		try {
+			System.in.read();
+		}
+		catch(Exception e) {	
+		}
+	}
+	public static void calcSphere() {
+		double pi = 3.14;
+		System.out.print("Enter the radius: ");
+		double r = reader.nextDouble();
+		double answer = (4 * pi * (r * r * r)) / 3;
+		System.out.printf("\nThe Volume is %.2f", answer);
+		System.out.println("\n\nPress Any Key to Continue");
+		try {
+			System.in.read();
+		}
+		catch(Exception e) {	
+		}
+	}
+}
